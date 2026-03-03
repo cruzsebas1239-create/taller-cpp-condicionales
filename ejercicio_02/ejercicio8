@@ -1,0 +1,58 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    double saldo = 1000.0;   
+    int opcion;
+    int transacciones = 0;
+
+    do {
+        cout << "\n--- MENU ATM ---" << endl;
+        cout << "1. Depositar" << endl;
+        cout << "2. Retirar" << endl;
+        cout << "3. Consultar saldo" << endl;
+        cout << "4. Salir" << endl;
+        cout << "Seleccione una opción: ";
+        cin >> opcion;
+
+        switch (opcion) {
+            case 1: {
+                double deposito;
+                cout << "Ingrese cantidad a depositar: ";
+                cin >> deposito;
+                if (deposito > 0) {
+                    saldo += deposito;   
+                    transacciones++;     
+                    cout << "Depósito exitoso. Nuevo saldo: " << saldo << endl;
+                } else {
+                    cout << "Cantidad inválida." << endl;
+                }
+                break;
+            }
+            case 2: {
+                double retiro;
+                cout << "Ingrese cantidad a retirar: ";
+                cin >> retiro;
+                if (retiro > 0 && retiro <= saldo) {
+                    saldo -= retiro;     
+                    transacciones++;     
+                    cout << "Retiro exitoso. Nuevo saldo: " << saldo << endl;
+                } else {
+                    cout << "Error: saldo insuficiente o cantidad inválida." << endl;
+                }
+                break;
+            }
+            case 3:
+                cout << "Saldo actual: " << saldo << endl;
+                cout << "Número de transacciones realizadas: " << transacciones << endl;
+                break;
+            case 4:
+                cout << "Gracias por usar el cajero. Total transacciones: " << transacciones << endl;
+                break;
+            default:
+                cout << "Opción inválida." << endl;
+        }
+    } while (opcion != 4);
+
+    return 0;
+}
