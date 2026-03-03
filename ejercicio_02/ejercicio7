@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int anio;
+    bool esBisiesto;
+
+    cout << "Ingrese un año: ";
+    cin >> anio;
+
+    
+    bool divisiblePor4 = (anio % 4 == 0);
+    cout << "¿Divisible por 4? " << (divisiblePor4 ? "Sí" : "No") << endl;
+
+    
+    bool divisiblePor100 = (anio % 100 == 0);
+    cout << "¿Divisible por 100? " << (divisiblePor100 ? "Sí" : "No") << endl;
+
+    
+    bool divisiblePor400 = (anio % 400 == 0);
+    cout << "¿Divisible por 400? " << (divisiblePor400 ? "Sí" : "No") << endl;
+
+   
+    esBisiesto = divisiblePor4 && (!divisiblePor100 || divisiblePor400);
+
+    cout << "Resultado: El año " << anio 
+         << (esBisiesto ? " es bisiesto." : " no es bisiesto.") 
+         << endl;
+
+    return 0;
+}
