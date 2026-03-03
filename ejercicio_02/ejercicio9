@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    float peso;     
+    double altura;  
+    double imc;
+
+    cout << "Ingrese su peso en kg: ";
+    cin >> peso;
+
+    cout << "Ingrese su altura en metros: ";
+    cin >> altura;
+
+    
+    imc = peso / (altura * altura);
+
+    cout << "\nSu IMC es: " << imc << endl;
+
+    if (imc < 18.5) {
+        cout << "Clasificación: Bajo peso" << endl;
+        cout << "Acción sugerida: Consulte un nutricionista para mejorar su dieta." << endl;
+    } else if (imc < 25) {
+        cout << "Clasificación: Normal" << endl;
+        cout << "Acción sugerida: Mantenga hábitos saludables y actividad física." << endl;
+    } else if (imc < 30) {
