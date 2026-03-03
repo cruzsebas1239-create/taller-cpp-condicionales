@@ -6,7 +6,7 @@ int main() {
 
     cout << "Valores iniciales: a = " << a << ", b = " << b << endl;
 
-    // (a) Con variable temporal
+
     {
         int x = a, y = b;
         cout << "\nMétodo (a) con variable temporal:" << endl;
@@ -16,7 +16,6 @@ int main() {
         cout << "Resultado: a = " << x << ", b = " << y << endl;
     }
 
-    // (b) Con operaciones aritméticas
     {
         int x = a, y = b;
         cout << "\nMétodo (b) con operaciones aritméticas:" << endl;
@@ -26,7 +25,7 @@ int main() {
         cout << "Resultado: a = " << x << ", b = " << y << endl;
     }
 
-    // (c) Con XOR
+    
     {
         int x = a, y = b;
         cout << "\nMétodo (c) con XOR:" << endl;
